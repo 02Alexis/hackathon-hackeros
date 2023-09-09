@@ -72,7 +72,12 @@
       font-weight: 300;
       font-size: 1rem;
       padding: 0.8em 0;
-      background: $primary-color;
+      background: $tertiary-color;
+      &:hover {
+        color: $dark-color;
+        background: $primary-color;
+      }
+
       border: none;
       border-radius: 0.2em;
       cursor: pointer;

@@ -12,7 +12,8 @@
     box-sizing: border-box;
     h1 {
       position: relative;
-      // color: ;
+      color: $fifth-color;
+
       font-weight: 600;
       left: 10px;
       margin-top: 10px;
@@ -28,7 +29,6 @@
         margin-bottom: 20px;
         margin-top: -10px;
         font-size: 14px;
-        // color: ;
       }
     }
     &__input {
@@ -39,7 +39,7 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
       outline: none;
       margin-bottom: 20px;
-      color: var(--Dark-color);
+      color: $fifth-color;
     }
     &__input-field label {
       position: absolute;
@@ -55,7 +55,7 @@
     &__input-field .container__input:valid ~ label {
       top: -10px;
       font-size: 13px;
-      // color: ;
+      color: $dark-color;
     }
 
     &__input-field .container__input:focus,
@@ -74,7 +74,13 @@
         font-weight: 300;
         font-size: 1rem;
         padding: 0.8em 0;
-        // background: ;
+        background: $tertiary-color;
+
+        &:hover {
+          color: $dark-color;
+          background: $primary-color;
+        }
+
         border: none;
         border-radius: 0.2em;
         cursor: pointer;

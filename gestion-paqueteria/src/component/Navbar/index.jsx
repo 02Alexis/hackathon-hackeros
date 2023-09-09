@@ -4,15 +4,19 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <div className="header__nav">
-      <div className="header__contenido">
-        <h3>Hackeros</h3>
-      </div>
+      <div className="between">
+        <Link to="/">
+          <h1 className="font">NextAuth</h1>
+        </Link>
 
-      <div className="header__contenido">
-        <nav id="nav">
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
-        </nav>
+        <ul className="flex">
+          <li className="paddin">
+            <Link to="/login">Login</Link>
+          </li>
+          <li className="paddin">
+            <Link to="/register">Registro</Link>
+          </li>
+        </ul>
       </div>
     </div>
   );
