@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { BiSolidPackage, BiFile, BiInjection } from 'react-icons/bi'
-import { createData } from '../../service/api'
+import { createData, getLocation } from '../../service/api'
 import Swal from 'sweetalert2'
 import './index.scss'
 
@@ -12,10 +12,11 @@ const SentForm = () => {
 
 
   const onSubmit = async orderInfo => {
+    const location = await getLocation(orderInfo.origin_address)
     const order = {
       valor_declarado: orderInfo.price,
-      direccion_destinatario: orderInfo.destiny_address,
-      direccion_remitente: orderInfo.origin_address,
+      direccion_destinatario: location,
+      direccion_remitente: location,
       fragilidad: orderInfo.fragile
     }
     await createData('envio', order)

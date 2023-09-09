@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Delivery from "../../assets/serice.png";
 import Navbar from "../Navbar";
 import { useNavigate } from "react-router-dom";
