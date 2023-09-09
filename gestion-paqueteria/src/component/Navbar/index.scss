@@ -1,0 +1,21 @@
+@import "../App/variables";
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 18px 18px 50px;
+  padding-left: 36px;
+  // gap: 20px;
+  margin-bottom: 23px;
+}
+
+.header__contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: center;
+}
+
+// .link {
+
+// }
