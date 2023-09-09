@@ -1,0 +1,12 @@
+@mixin flexCenter($direction, $content, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $align;
+}
+
+@mixin containerStyle($width, $height, $top-bottom, $right-left) {
+  width: $width;
+  height: $height;
+  padding: $top-bottom $right-left;
+}

@@ -1,0 +1,82 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+$fifth-color-transparent: rgba($color: $fifth-color, $alpha: 0.2);
+
+.sent-form-container {
+  @include containerStyle($mobile-max-width, 100%, 15px, 15px);
+  margin: 0 auto;
+  // background-color: $six-color;
+  background-color: $light-color;
+  border-radius: 20px;
+  &__form {
+    @include formStyle;
+    .input-container {
+      @include inputWrapper(100%, 250px);
+      margin: 20px;
+      h2 {
+        @include titleStyle(2.6rem, center, 1px, $primary-color)
+      }
+      input, select {
+        @include inputStyle(280px, 40px, $six-color, $quaternary-color, $primary-color, 1.8rem, $primary-color);
+        border-radius: 10px;
+        padding-left: 10px;
+        &::placeholder {
+          color: $secondary-color;
+        }
+      }
+      .input-wrapper {
+        @include inputWrapper(25px, 25px);
+        justify-content: center;
+        grid-template-columns: repeat(2, 50px);
+        .radio-label {
+          font-size: 3rem;
+          color: $primary-color;
+        }
+        .radio-input {
+          width: 20px;
+          height: 20px;
+          &:focus {
+          outline: none;
+        }
+        }
+      }
+    } 
+    &--user-info {
+      height: 310px !important; 
+    }
+    &--sent-type {
+      height: 100px !important;
+      grid-template-areas: "title title title"
+      "package document farma";
+      .title {
+        grid-area: title;
+      }
+      .package {
+        grid-area: package;
+      }
+      .document {
+        grid-area: document;
+      }
+      .farma {
+        grid-area: farma;
+      } height: 270px;
+    }
+    &--address-info {
+      height: 280px !important;
+    }
+    &--sent-info {
+      height: 300px !important;
+    }
+    &--sent-request {
+      height: 100px !important;
+      .clean-form {
+        @include buttonStyle(200px, 35px, 10px, capitalize, 1.6rem, $secondary-color, $six-color);
+        border: 1px solid $primary-color
+      }
+      .send-form {
+        @include buttonStyle(200px, 35px, 10px, capitalize, 1.6rem, $six-color, $secondary-color);
+      }
+    }
+  }
+}
