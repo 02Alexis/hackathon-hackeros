@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Delivery from "../../assets/serice.png";
 import Navbar from "../Navbar";
 import "./index.scss";
@@ -12,7 +13,7 @@ const HomePage = () => {
           Hackheros te ofrece una mayor seguridad al enviar y entregar tus
           paquetes
         </p>
-        <button>Hacer entrega</button>
+        <Link to='/sent-form'><button>Hacer entrega</button></Link>
         <img src={Delivery} alt="Imagen de entrega" />
       </div>
     </>

@@ -1,20 +1,36 @@
+import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { BiSolidPackage, BiFile, BiInjection } from 'react-icons/bi'
+import { createData } from '../../service/api'
+import Swal from 'sweetalert2'
 import './index.scss'
 
 const SentForm = () => {
   const { register, handleSubmit } = useForm()
 
-  const endpoint = 'https://hackathon-hackathon.up.railway.app/api/v2/envios'
+  const navigate = useNavigate();
 
-  const onSubmit = orderInfo => {
+
+  const onSubmit = async orderInfo => {
     const order = {
       valor_declarado: orderInfo.price,
       direccion_destinatario: orderInfo.destiny_address,
       direccion_remitente: orderInfo.origin_address,
       fragilidad: orderInfo.fragile
     }
-    console.log(order);
+    await createData('envio', order)
+    const userConfirmDeletion = await Swal.fire({
+      title: 'Orden generada correctamente',
+      confirmButtonText: 'Ok',
+      reverseButtons: true,
+      "customClass": {
+          button: 'custom-button',
+          htmlContainer: 'custom-container'
+      },
+    })
+    if (userConfirmDeletion.isConfirmed) {
+      navigate('/')
+    }
   }
 
   return (
@@ -48,7 +64,7 @@ const SentForm = () => {
             />
             <input 
               type='text' 
-              placeholder='Dirección' 
+              placeholder='Dirección remitente' 
               {...register('origin_address')}
               name='origin_address'
             />
@@ -94,7 +110,7 @@ const SentForm = () => {
             />
             <input 
               type='text' 
-              placeholder='Dirección'
+              placeholder='Dirección envio'
               {...register('destiny_address')}
               name='destiny_address'
             />

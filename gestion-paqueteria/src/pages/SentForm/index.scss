@@ -7,7 +7,9 @@ $fifth-color-transparent: rgba($color: $fifth-color, $alpha: 0.2);
   @include containerStyle($mobile-max-width, 100%, 15px, 15px);
   margin: 0 auto;
   // background-color: $six-color;
-  background-color: $light-color;
+  background-color: white;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
   border-radius: 20px;
   &__form {
     @include formStyle;
