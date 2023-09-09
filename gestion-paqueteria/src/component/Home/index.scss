@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0;
 
   h1 {
     color: $fifth-color;
@@ -23,7 +22,6 @@
     @media screen and (max-width: 720px) {
       font-size: 20px;
       line-height: 1.5;
-      overflow: hidden;
       text-align: center;
     }
   }
